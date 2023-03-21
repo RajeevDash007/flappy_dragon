@@ -18,7 +18,7 @@ gradient.addColorStop("0.6", "#000");
 gradient.addColorStop("0.65", "#fff");
 
 const background = new Image();
-background.src = '/BG.png';
+background.src = '/js/BG.png';
 
 const BG = {
     x1: 0,
@@ -68,7 +68,7 @@ window.addEventListener('keyup',function(e){
 });
 
 const bang = new Image();
-bang.src = '/bang.png';
+bang.src = '/js/bang.png';
 
 function handleCollisions(){
     for(let i=0;i<obstaclesArray.length;i++){
