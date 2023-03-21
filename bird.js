@@ -1,11 +1,17 @@
+const dragonSprite = new Image();
+dragonSprite.src = '/dragon.png';
+
 class Bird{
     constructor(){
         this.x = 150;
         this.y = 200;
         this.vy = 0;
-        this.width = 20;
-        this.height = 20;
+        this.originalWidth = 1200;
+        this.originalHeight = 780;
+        this.width = this.originalWidth/20;
+        this.height = this.originalHeight/20;
         this.weight = 1;
+        this.frameX=0;
     }
     update(){
         let curve = Math.sin(angle) * 20;
@@ -23,15 +29,18 @@ class Bird{
         }
         if(spacePressed && this.y > this.height * 2){
             this.flap();
+            
         }
         
     }
     draw(){
-        ctx.fillStyle = 'red';
-        ctx.fillRect(this.x,this.y,this.width,this.height);
+        //ctx.fillStyle = 'red';
+        //ctx.fillRect(this.x,this.y,this.width,this.height);
+        ctx.drawImage(dragonSprite,0,0,this.originalWidth,this.originalHeight,this.x - 20, this.y - 12,this.width * 1.7,this.height * 1.7);
     }
     flap(){
         this.vy -= 2;
+        
     }
 }
 
