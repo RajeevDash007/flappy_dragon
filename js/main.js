@@ -67,6 +67,9 @@ window.addEventListener('keyup',function(e){
     if (e.code === 'Space') spacePressed = false;
 });
 
+
+
+
 const bang = new Image();
 bang.src = '/js/bang.png';
 
