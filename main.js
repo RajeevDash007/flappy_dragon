@@ -10,9 +10,22 @@ let frame = 0;
 let score = 0;
 let gamespeed = 2;
 
+ 
+
 function animate(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillRect(10,10,50,50);
+    //ctx.fillRect(10,canvas.height - 90,50,50);
+    bird.update();
+    bird.draw();
     requestAnimationFrame(animate);
 }
 animate();
+
+window.addEventListener('keydown',function(e){
+    if (e.code === 'Space') spacePressed = true;
+    
+});
+
+window.addEventListener('keyup',function(e){
+    if (e.code === 'Space') spacePressed = false;
+});
