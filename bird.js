@@ -8,8 +8,9 @@ class Bird{
         this.weight = 1;
     }
     update(){
-        if(this.y>canvas.height - (this.height*2)){
-            this.y = canvas.height - (this.height*2);
+        let curve = Math.sin(angle) * 20;
+        if(this.y>canvas.height - (this.height*2) + curve){
+            this.y = canvas.height - (this.height*2) + curve;
             this.vy = 0;
         }else{
             this.vy += this.weight;
@@ -20,7 +21,7 @@ class Bird{
             this.y = 0 + this.height;
             this.vy = 0;
         }
-        if(spacePressed){
+        if(spacePressed && this.y > this.height * 2){
             this.flap();
         }
         
